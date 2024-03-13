@@ -4,11 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.azhu</groupId>
+    <groupId>com.jacob</groupId>
     <artifactId>PaperCheck</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -24,6 +30,15 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- 根据需要选择合适的版本号 -->
+                <configuration>
+                    <source>1.8</source> <!-- 指定编译时的 Java 版本 -->
+                    <target>1.8</target> <!-- 指定生成的字节码版本 -->
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -50,7 +65,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <useUniqueVersions>false</useUniqueVersions>
-                            <mainClass>com.azhu.main.MainPaperCheck</mainClass>
+                            <mainClass>com.jacob.main.maintest</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
